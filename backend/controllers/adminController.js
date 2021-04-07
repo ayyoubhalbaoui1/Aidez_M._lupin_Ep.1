@@ -6,11 +6,12 @@ const { adminValidationSchema , loginValidationSchema } = require("./validations
 
 exports.adminRegister = async (req, res, next) => {
 
-  //VALIDATE DATA BEFORE SAVE ADMIN
+  //validation data and after => save Admin 
   const { error } = adminValidationSchema.validate(req.body)
   if (error) return res.status(400).send(error.details[0].message);
 
    //CHECK IF ADMIN ALREADY EXIST
+   //test if admin is exist 
   const emailExist = await Admin.findOne({ email: req.body.email });
   if (emailExist) return res.status(400).send("Email already exist");
 
