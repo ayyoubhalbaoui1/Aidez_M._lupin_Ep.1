@@ -55,10 +55,6 @@ async function validateSeller(id) {
     console.log(token);
     axios.patch('http://localhost:5000/seller/validate',{
         id_seller : id,
-    },{
-        headers:{
-            "auth-token": token
-          }
     })
     .then(function (response) {
         fetchData(page)
@@ -90,7 +86,7 @@ async function validateSeller(id) {
               onScreen: true
             }
           });
-        console.log(error.response.data);
+        
       });
 
      

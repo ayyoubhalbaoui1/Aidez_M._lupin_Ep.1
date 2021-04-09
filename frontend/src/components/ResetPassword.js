@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   //   margin: theme.spacing(1),
   //   backgroundColor: '#1a1a1a',
   // },
-  form: {
+  form: { 
     width: '100%', // Fix IE 11 issue.
     marginTop: theme.spacing(1),
   },
@@ -42,58 +42,66 @@ export default function ResetPassword() {
   const [newPassword, setNewPassword] = useState('');
   const token = localStorage.getItem('token')
 
-
+console.log(token);
 
 
   const onClick = async () =>{
     // console.log(password,newPassword)
-    await fetch('http://localhost:5000/seller/resetPassword',
-    // {
-    //     password : password,
-    //     newPassword : newPassword
-    // },
-    {
-      body : {
-        password : password,
-        newPassword : newPassword
-      },
-      method: 'PATCH',
-    headers : {
-      "Content-type": "application/json; charset=UTF-8",
-        'auth-token' : token
-    }}).then(response => {
-        store.addNotification({
-            title: "Success !",
-            message: "Password Reseted successfully",
-            type: "success",
-            insert: "top",
-            container: "bottom-right",
-            animationIn: ["animate__animated", "animate__fadeIn"],
-            animationOut: ["animate__animated", "animate__fadeOut"],
-            dismiss: {
-                duration: 5000,
-                onScreen: true
-            }
-            });
-            history.push('/Home')
-    }).catch(err =>{
-        store.addNotification({
-            title: "Error !",
-            message: err.response.data,
-            type: "danger",
-            insert: "top",
-            container: "bottom-right",
-            animationIn: ["animate__animated", "animate__fadeIn"],
-            animationOut: ["animate__animated", "animate__fadeOut"],
-            dismiss: {
-                duration: 5000,
-                onScreen: true
-            }
-            });
-    })
-}
+//     await fetch('http://localhost:5000/seller/resetPassword',
+//     // {
+//     //     password : password,
+//     //     newPassword : newPassword
+//     // },
+//     {
+//       body : {
+//         password : password,
+//         newPassword : newPassword
+//       },
+//       method: 'PATCH',
+//     headers : {
+//       "Content-type": "application/json; charset=UTF-8",
+//         'auth-token' : token
+//     }}).then(response => {
+//         store.addNotification({
+//             title: "Success !",
+//             message: "Password Reseted successfully",
+//             type: "success",
+//             insert: "top",
+//             container: "bottom-right",
+//             animationIn: ["animate__animated", "animate__fadeIn"],
+//             animationOut: ["animate__animated", "animate__fadeOut"],
+//             dismiss: {
+//                 duration: 5000,
+//                 onScreen: true
+//             }
+//             });
+//             history.push('/Home')
+//     }).catch(err =>{
+//         store.addNotification({
+//             title: "Error !",
+//             message: err.response.data,
+//             type: "danger",
+//             insert: "top",
+//             container: "bottom-right",
+//             animationIn: ["animate__animated", "animate__fadeIn"],
+//             animationOut: ["animate__animated", "animate__fadeOut"],
+//             dismiss: {
+//                 duration: 5000,
+//                 onScreen: true
+//             }
+//             });
+//     })
+// }
 
+    await axios.patch('http://localhost:5000/seller/resetPassword/',{
+              password : password,
+              newPassword : newPassword
+            },
+            {headers:{'auth-token':token}})
+            .then(response=>console.log(response))
+            .catch(err=>console.log(err.response));
 
+  }
 
   return (
     <div className="main">
