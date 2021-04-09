@@ -49,14 +49,16 @@ exports.sellerRegister = async (req, res, next) => {
 exports.resetPassword = async (req, res, next) => {
   const token = req.header("auth-token");
   const sellerEmail = jwt.verify(token, process.env.SELLER_TOKEN).email;
-
+  console.log(req.body)
   const { password, newPassword } = req.body;
   try {
     const seller = await Seller.findOne({ email: sellerEmail });
     if (seller) {
+      console.log(seller);
       bcrypt.compare(password, seller.password, async (err, result) => {
         if (result) {
           const hashedPassword = await bcrypt.hash(newPassword, 10);
+          console.log(hashedPassword)
           seller.password = hashedPassword;
           seller.isReseted = true
           const newPass = await seller.save();

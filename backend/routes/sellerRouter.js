@@ -17,7 +17,7 @@ const { verifySellerToken , verifyAdminToken} = require("../controllers/tokenVer
 router.post("/register", sellerRegister);
 router.get("/getAll", getAllSellers);
 router.get("/get", getSellersPagin);
-router.patch("/resetPassword", verifySellerToken, resetPassword);
+router.patch("/resetPassword", resetPassword);
 router.post("/login", sellerLogin);
 router.patch("/validate",verifyAdminToken , validSeller);
 router.patch("/upgrade/:id", sellerPack);

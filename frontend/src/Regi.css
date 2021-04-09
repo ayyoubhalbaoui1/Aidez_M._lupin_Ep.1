@@ -1,0 +1,27 @@
+.main{
+    background-image: url('../src/img/wallhaven-yjqozg.png');
+    
+    background-size:cover ;
+    background-position: center ; 
+    height: 812px;
+    /* background-color: #333; */
+    background-repeat: repeat-y;
+    margin-top: -71px;
+    
+} 
+
+
+ .form-section{
+    background-color: rgb(255, 255, 255);
+    width: 532px;
+    top: 51%;
+    left: 84%;
+    padding: 60px 30px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    box-shadow: 8px 8px 27px #000;
+    height: 70vh;
+    border-radius: 8px;
+} 
+

@@ -1,0 +1,33 @@
+
+.nav-erea{
+    list-style: none;
+}
+.nav-erea li{
+    display: inline-block;
+    padding: 0 15px;
+    text-transform: uppercase;
+}
+.nav-erea li a{
+    color: #333;
+    /* border: 2px solid #333; */
+    /* font-family: 'Redressed', cursive; */
+}
+.nav-erea li a:hover{
+    color: #333;
+    border: 2px solid #333;
+}
+.btn-area{
+    cursor: pointer;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 10px 30px;
+    /* border-radius: ; */
+    /* background: #006C87; */
+    border: 2px solid #333;
+}
+.btn-area :hover{
+    color: red;
+}
