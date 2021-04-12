@@ -10,8 +10,6 @@ import Container from '@material-ui/core/Container';
 import { useHistory} from "react-router-dom";
 import { store } from 'react-notifications-component';
 import axios from 'axios'
-import '../login.css'
-
 
 
 const useStyles = makeStyles((theme) => ({
@@ -21,17 +19,10 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     alignItems: 'center',
   },
-  // avatar: {
-  //   margin: theme.spacing(1),
-  //   backgroundColor: '#1a1a1a',
-  // },
-  form: { 
-    width: '100%', // Fix IE 11 issue.
-    marginTop: theme.spacing(1),
-  },
+
   submit: {
     margin: theme.spacing(3, 0, 2),
-    backgroundColor: 'rgba(59, 130, 246, 0.5)'
+    backgroundColor: 'rgb(80, 77, 193)'
   },
 }));
 
@@ -42,66 +33,49 @@ export default function ResetPassword() {
   const [newPassword, setNewPassword] = useState('');
   const token = localStorage.getItem('token')
 
-console.log(token);
+
 
 
   const onClick = async () =>{
-    // console.log(password,newPassword)
-//     await fetch('http://localhost:5000/seller/resetPassword',
-//     // {
-//     //     password : password,
-//     //     newPassword : newPassword
-//     // },
-//     {
-//       body : {
-//         password : password,
-//         newPassword : newPassword
-//       },
-//       method: 'PATCH',
-//     headers : {
-//       "Content-type": "application/json; charset=UTF-8",
-//         'auth-token' : token
-//     }}).then(response => {
-//         store.addNotification({
-//             title: "Success !",
-//             message: "Password Reseted successfully",
-//             type: "success",
-//             insert: "top",
-//             container: "bottom-right",
-//             animationIn: ["animate__animated", "animate__fadeIn"],
-//             animationOut: ["animate__animated", "animate__fadeOut"],
-//             dismiss: {
-//                 duration: 5000,
-//                 onScreen: true
-//             }
-//             });
-//             history.push('/Home')
-//     }).catch(err =>{
-//         store.addNotification({
-//             title: "Error !",
-//             message: err.response.data,
-//             type: "danger",
-//             insert: "top",
-//             container: "bottom-right",
-//             animationIn: ["animate__animated", "animate__fadeIn"],
-//             animationOut: ["animate__animated", "animate__fadeOut"],
-//             dismiss: {
-//                 duration: 5000,
-//                 onScreen: true
-//             }
-//             });
-//     })
-// }
+    await axios.patch('http://localhost:5000/seller/resetPassword',{
+        password : password,
+        newPassword : newPassword
+    },{
+    headers : {
+        'auth-token' : token
+    }}).then(response => {
+        store.addNotification({
+            title: "Success !",
+            message: "Password Reseted successfully",
+            type: "success",
+            insert: "top",
+            container: "bottom-right",
+            animationIn: ["animate__animated", "animate__fadeIn"],
+            animationOut: ["animate__animated", "animate__fadeOut"],
+            dismiss: {
+                duration: 5000,
+                onScreen: true
+            }
+            });
+            history.push('/Home')
+    }).catch(err =>{
+        store.addNotification({
+            title: "Error !",
+            message: err.response.data,
+            type: "danger",
+            insert: "top",
+            container: "bottom-right",
+            animationIn: ["animate__animated", "animate__fadeIn"],
+            animationOut: ["animate__animated", "animate__fadeOut"],
+            dismiss: {
+                duration: 5000,
+                onScreen: true
+            }
+            });
+    })
+}
 
-    await axios.patch('http://localhost:5000/seller/resetPassword/',{
-              password : password,
-              newPassword : newPassword
-            },
-            {headers:{'auth-token':token}})
-            .then(response=>console.log(response))
-            .catch(err=>console.log(err.response));
 
-  }
 
   return (
     <div className="main">
@@ -109,14 +83,9 @@ console.log(token);
     <Container component="main" maxWidth="xs" style={{marginBottom : '100px'}}>
       <CssBaseline />
       <div className={classes.paper}>
-        {/* <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
-        </Avatar>
-        <Typography component="h1" variant="h5">
-          Reset Password
-        </Typography> */}
-                  <div className="form-section mt-5">
+      <div className="form-section mt-5">
 
+       
         <form className={classes.form} noValidate>
           <TextField
             variant="outlined"
@@ -157,7 +126,6 @@ console.log(token);
       </div>
     </Container>
     </div>
-
 
   );
 }
