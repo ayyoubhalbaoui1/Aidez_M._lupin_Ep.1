@@ -109,11 +109,11 @@ export default function Ads() {
         <div className="ads-container">
             <h1 style={{textAlign:'center'}}>Add Ads</h1>
             <div className="add-ads-form">
-                <form className={classes.root} noValidate autoComplete="on" onSubmit={handleSubmit(onSubmit)}>
-                    <TextField name="pricing" label="Price" variant="outlined" type="number"inputRef={register} />
-                    <TextField name="picture" label="Ads Picture" type="file"  InputLabelProps={{shrink: true}} variant="outlined" inputRef={register}/>
-                    <TextField name="startDate" label="Date Start"  type="date" InputLabelProps={{shrink: true}} variant="outlined" inputRef={register}/>
-                    <TextField name="endDate" label="Date End" type="date" InputLabelProps={{shrink: true}} variant="outlined" inputRef={register}/>
+                <form style={{width:'100%'}}  className={classes.root} noValidate autoComplete="on" onSubmit={handleSubmit(onSubmit)}>
+                    <TextField style={{width:'100%'}}  name="pricing" label="Price" variant="outlined" type="number"inputRef={register} />
+                    <TextField style={{width:'100%'}}  name="picture" label="Ads Picture" type="file"  InputLabelProps={{shrink: true}} variant="outlined" inputRef={register}/>
+                    <TextField style={{width:'100%'}}  name="startDate" label="Date Start"  type="date" InputLabelProps={{shrink: true}} variant="outlined" inputRef={register}/>
+                    <TextField style={{width:'100%'}}  name="endDate" label="Date End" type="date" InputLabelProps={{shrink: true}} variant="outlined" inputRef={register}/>
                     <Button variant="contained" color="primary" type="submit">Add Ads</Button>
                 </form>
             </div>

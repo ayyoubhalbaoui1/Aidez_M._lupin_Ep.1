@@ -35,7 +35,7 @@ export default function Stats() {
     }
 
     return (
-        <div className="statistics-container">
+        <div  className="statistics-container">
             <h1>
                 MY STATISTICS
             </h1>

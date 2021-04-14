@@ -12,7 +12,7 @@ import GroupIcon from '@material-ui/icons/Group';
 import { Link } from 'react-router-dom'
 
 const navStyle = {
-    color : 'black',
+    color : 'white',
     textDecoration: 'none'
 }
 
@@ -21,57 +21,45 @@ export const mainListItems = (
   <div>
     <Link to='/Admin/Dashboard' style={navStyle}>
         <ListItem button>
-        <ListItemIcon>
+        {/* <ListItemIcon>
             <CategoryIcon />
-        </ListItemIcon>
+        </ListItemIcon> */}
         <ListItemText primary="Categories" />
         </ListItem>
     </Link>
     <Link to='/Admin/Sellers' style={navStyle}>
         <ListItem button>
-        <ListItemIcon>
-            <PeopleIcon />
-        </ListItemIcon>
+     
         <ListItemText primary="Sellers" />
         </ListItem>
     </Link>
     <Link to='/Admin/Buyers' style={navStyle}>
         <ListItem button>
-        <ListItemIcon>
-            <GroupIcon />
-        </ListItemIcon>
+       
         <ListItemText primary="Buyers" />
         </ListItem>
     </Link>
     <Link to='/Admin/Ads' style={navStyle}>
         <ListItem button>
-        <ListItemIcon>
-            <CallToActionIcon />
-        </ListItemIcon>
+       
         <ListItemText primary="Ads" />
         </ListItem>
     </Link>
     <Link to='/Admin/Orders' style={navStyle}>
         <ListItem button>
-        <ListItemIcon>
-            <ReceiptIcon />
-        </ListItemIcon>
+       
         <ListItemText primary="Orders" />
         </ListItem>
     </Link>
     <Link to='/Admin/Delivery' style={navStyle}>
         <ListItem button>
-        <ListItemIcon>
-            <PersonIcon />
-        </ListItemIcon>
+       
         <ListItemText primary="Delivery Men" />
         </ListItem>
     </Link>
     <Link to='/Admin/Admins' style={navStyle}>
         <ListItem button>
-        <ListItemIcon>
-            <SupervisorAccountIcon />
-        </ListItemIcon>
+        
         <ListItemText primary="Admins" />
         </ListItem>
     </Link>

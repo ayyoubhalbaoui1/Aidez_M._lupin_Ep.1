@@ -25,9 +25,9 @@ export default function Info() {
     return (
         <div className="profile-container">
             <div className="flex items-center justify-center">
-                <div className="max-w-xs">
-                    <div className="bg-white shadow-xl rounded-lg py-3">
-                    <div className="photo-wrapper p-2">
+                <div className="max">
+                    <div className="bg-white rounded-lg py-3">
+                    <div className="photo-wrapper p-8">
                         <img className="w-32 h-32 rounded-full mx-auto" src={userImg} alt="Seller" />
                     </div>
                     <div className="p-2">
@@ -37,23 +37,23 @@ export default function Info() {
                         </div>
                         <table className="text-xs my-3">
                         <tbody><tr>
-                            <td className="px-2 py-2 text-gray-500 font-semibold">Address</td>
+                            <td className="px-2 py-2 text-green-700 font-bold">Address</td>
                             <td className="px-2 py-2">{seller.address}</td>
                             </tr>
                             <tr>
-                            <td className="px-2 py-2 text-gray-500 font-semibold">Phone</td>
+                            <td className="px-2 py-2 text-green-500 font-bold">Phone</td>
                             <td className="px-2 py-2">{seller.phone}</td>
                             </tr>
                             <tr>
-                            <td className="px-2 py-2 text-gray-500 font-semibold">Email</td>
+                            <td className="px-2 py-2 text-green-500 font-bold">Email</td>
                             <td className="px-2 py-2">{seller.email}</td>
                             </tr>
                             <tr>
-                            <td className="px-2 py-2 text-gray-500 font-semibold">Identity</td>
+                            <td className="px-2 py-2 text-green-500 font-bold">Identity</td>
                             <td className="px-2 py-2">{seller.identity}</td>
                             </tr>
                             <tr>
-                            <td className="px-2 py-2 text-gray-500 font-semibold">Seller Pack</td>
+                            <td className="px-2 py-2 text-green-500 font-bold">Seller Pack</td>
                             <td className="px-2 py-2">{seller.type}</td>
                             </tr>
                         </tbody></table>

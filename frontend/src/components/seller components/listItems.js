@@ -9,8 +9,9 @@ import LocalAtmIcon from '@material-ui/icons/LocalAtm';
 import { Link } from 'react-router-dom'
 
 const navStyle = {
-    color : 'black',
-    textDecoration: 'none'
+    color : 'white',
+    textDecoration: 'none',
+    
 }
 
 export const mainListItems = (
@@ -18,33 +19,27 @@ export const mainListItems = (
   <div>
     <Link to='/Seller/Dashboard' style={navStyle}>
         <ListItem button>
-        <ListItemIcon>
-            <EqualizerIcon />
-        </ListItemIcon>
+        
         <ListItemText primary="Statistics" />
         </ListItem>
     </Link>
     <Link to='/Seller/Info' style={navStyle}>
         <ListItem button>
-        <ListItemIcon>
-            <AccountBoxIcon />
-        </ListItemIcon>
+     
         <ListItemText primary="Personal informations" />
         </ListItem>
     </Link>
     <Link to='/Seller/Products' style={navStyle}>
         <ListItem button>
-        <ListItemIcon>
+        {/* <ListItemIcon>
             <LocalParkingIcon />
-        </ListItemIcon>
+        </ListItemIcon> */}
         <ListItemText primary="My products" />
         </ListItem>
     </Link>
     <Link to='/Seller/Packs' style={navStyle}>
         <ListItem button>
-        <ListItemIcon>
-            <LocalAtmIcon />
-        </ListItemIcon>
+       
         <ListItemText primary="Upgrade Pack" />
         </ListItem>
     </Link>

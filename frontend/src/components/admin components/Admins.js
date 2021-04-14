@@ -126,12 +126,12 @@ export default function Admins() {
             <div className="admins-container" >
                 <h1 style={{textAlign:'center'}}>Add Admin</h1>
                 <div className="add-admin-form">
-                    <form className={classes.root} noValidate autoComplete="on" onSubmit={handleSubmit(onSubmit)}>
-                        <TextField name="full_name" label="Full Name" variant="outlined" inputRef={register} />
-                        <TextField name="email" label="Email" variant="outlined" inputRef={register} />
-                        <TextField name="phone" label="Phone" variant="outlined" inputRef={register} />
-                        <TextField name="password" label="Password" type="password" variant="outlined" inputRef={register} />
-                        <TextField name="address" label="Address" variant="outlined" inputRef={register} />
+                    <form style={{width:'100%'}} className={classes.root} noValidate autoComplete="on" onSubmit={handleSubmit(onSubmit)}>
+                        <TextField style={{width:'100%'}} name="full_name" label="Full Name" variant="outlined" inputRef={register} />
+                        <TextField style={{width:'100%'}} name="email" label="Email" variant="outlined" inputRef={register} />
+                        <TextField style={{width:'100%'}} name="phone" label="Phone" variant="outlined" inputRef={register} />
+                        <TextField style={{width:'100%'}} name="password" label="Password" type="password" variant="outlined" inputRef={register} />
+                        <TextField style={{width:'100%'}} name="address" label="Address" variant="outlined" inputRef={register} />
                         <Button variant="contained" color="primary" type="submit">Add Admin</Button>
                     </form>
                 </div>

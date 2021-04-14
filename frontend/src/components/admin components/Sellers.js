@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
     '& > *': {
       margin: theme.spacing(2),
       width: '35ch',
+
     },
   },
 }));
@@ -117,7 +118,7 @@ async function deleteSeller(id){
 
 
     return (
-        <div className="seller-container">
+        <div  className="seller-container">
             <h1>Sellers</h1>
             <Table striped bordered hover>
                 <thead>

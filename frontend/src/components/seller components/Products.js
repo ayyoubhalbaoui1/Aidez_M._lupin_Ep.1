@@ -158,12 +158,12 @@ export default function Products() {
         <div className="ads-container">
         <h1 style={{textAlign:'center'}}>Add Product</h1>
         <div className="add-ads-form">
-            <form className={classes.root} noValidate autoComplete="on" onSubmit={handleSubmit(onSubmit)}>
-                <TextField name="name" label="Name" variant="outlined" inputRef={register} />
-                <TextField name="picture" label="Product Picture" type="file"  InputLabelProps={{shrink: true}} variant="outlined" inputRef={register}/>
-                <TextField name="description" label="Description"   variant="outlined" inputRef={register}/>
-                <TextField name="price" label="Price" type="number" variant="outlined" inputRef={register}/>
-                <FormControl variant="outlined" className={classes.formControl}>
+            <form style={{width:'100%'}} className={classes.root} noValidate autoComplete="on" onSubmit={handleSubmit(onSubmit)}>
+                <TextField style={{width:'100%'}} name="name" label="Name" variant="outlined" inputRef={register} />
+                <TextField style={{width:'100%'}} name="picture" label="Product Picture" type="file"  InputLabelProps={{shrink: true}} variant="outlined" inputRef={register}/>
+                <TextField style={{width:'100%'}} name="description" label="Description"   variant="outlined" inputRef={register}/>
+                <TextField style={{width:'100%'}} name="price" label="Price" type="number" variant="outlined" inputRef={register}/>
+                <FormControl style={{width:'100%'}} variant="outlined" className={classes.formControl}>
                     <InputLabel id="demo-simple-select-outlined-label">Category</InputLabel>
                     <Select
                     labelId="demo-simple-select-outlined-label"
@@ -182,7 +182,7 @@ export default function Products() {
 
                     </Select>
                 </FormControl>
-                <Button variant="contained"  type="submit" style={{backgroundColor: '#1a1a1a' , color : 'white'}}>Add Product</Button>
+                <Button variant="contained"  type="submit" style={{backgroundColor: 'rgb(80, 77, 193)' , color : 'white'}}>Add Product</Button>
             </form>
         </div>
         <h1 style={{textAlign:'center'}}>Products List</h1>
